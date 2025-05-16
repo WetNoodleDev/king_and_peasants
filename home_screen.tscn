@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=3 uid="uid://s004l3i3m0gk"]
+
+[ext_resource type="Texture2D" uid="uid://b3lltt06288x8" path="res://Images/King.png" id="1_outur"]
+[ext_resource type="Script" uid="uid://de4nrqmollcm0" path="res://world.gd" id="1_xe7vm"]
+[ext_resource type="Texture2D" uid="uid://6xpjowwglcn8" path="res://Images/Peasant.png" id="2_fm0op"]
+[ext_resource type="Texture2D" uid="uid://dvow4dhw1wknh" path="res://Images/Background.jpg" id="3_xe7vm"]
+[ext_resource type="Texture2D" uid="uid://bwtwquxrccni2" path="res://Images/parchment.png" id="5_gf7oa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_outur"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_fm0op"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_xe7vm"]
+font_size = 40
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_xe7vm")
+
+[node name="King" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(179, 696)
+scale = Vector2(0.825217, 0.801667)
+texture = ExtResource("1_outur")
+
+[node name="Peasant" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1776, 741)
+scale = Vector2(0.702614, 0.753268)
+texture = ExtResource("2_fm0op")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 380)
+scale = Vector2(1.45, 1.45)
+texture = ExtResource("3_xe7vm")
+flip_h = true
+
+[node name="UI Lower Panel" type="ColorRect" parent="."]
+z_index = 10
+custom_minimum_size = Vector2(1920, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 880.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.551876, 0.40998, 0.351667, 1)
+
+[node name="Option 1" type="TextureButton" parent="."]
+clip_contents = true
+offset_left = 307.0
+offset_top = 119.0
+offset_right = 807.0
+offset_bottom = 219.0
+texture_normal = ExtResource("5_gf7oa")
+ignore_texture_size = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Option 1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Option 2" type="TextureButton" parent="."]
+clip_contents = true
+offset_left = 306.0
+offset_top = 277.0
+offset_right = 806.0
+offset_bottom = 377.0
+texture_normal = ExtResource("5_gf7oa")
+ignore_texture_size = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Option 2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Event Description" type="RichTextLabel" parent="."]
+z_index = 3
+offset_left = 1233.0
+offset_top = 204.0
+offset_right = 1733.0
+offset_bottom = 404.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Event Description"]
+texture = ExtResource("5_gf7oa")
+
+[node name="UI Container" type="HBoxContainer" parent="."]
+offset_top = 880.0
+offset_right = 960.0
+offset_bottom = 1080.0
+
+[node name="Gold" type="Label" parent="UI Container"]
+z_index = 10
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "4"
+label_settings = SubResource("LabelSettings_outur")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Food" type="Label" parent="UI Container"]
+z_index = 10
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "10"
+label_settings = SubResource("LabelSettings_fm0op")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Peasants" type="Label" parent="UI Container"]
+z_index = 10
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+label_settings = SubResource("LabelSettings_xe7vm")
+horizontal_alignment = 1
+vertical_alignment = 1
